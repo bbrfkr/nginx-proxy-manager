@@ -1,3 +1,8 @@
+# nginx proxy manager
+## build procedure
+1. `./scripts/ci/frontend-build`
+1. `./scripts/buildx --load --tag nginx-proxy-manager`
+
 <p align="center">
 	<img src="https://nginxproxymanager.com/github.png">
 	<br><br>
