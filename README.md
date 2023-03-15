@@ -1,5 +1,6 @@
 # nginx proxy manager
 ## build procedure
+1. `export BUILD_VERSION=3.0.0`
 1. `./scripts/ci/frontend-build`
 1. `./scripts/buildx --load --tag nginx-proxy-manager`
 
