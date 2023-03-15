@@ -889,7 +889,7 @@ const internalCertificate = {
 			'--authenticator ' + dns_plugin.package_name + ':' + dns_plugin.full_plugin_name + ' ' +
 			(
 				hasConfigArg
-					? '--' + dns_plugin.package_name + ':' + dns_plugin.full_plugin_name + ' "' + credentialsLocation + '"'
+					? '--' + dns_plugin.package_name + ':' + dns_plugin.full_plugin_name + '-config "' + credentialsLocation + '"'
 					: ''
 			) +
 			(
