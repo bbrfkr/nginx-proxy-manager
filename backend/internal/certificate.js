@@ -886,10 +886,10 @@ const internalCertificate = {
 			'--agree-tos ' +
 			'--email "' + certificate.meta.letsencrypt_email + '" ' +
 			'--domains "' + certificate.domain_names.join(',') + '" ' +
-			'--authenticator ' + dns_plugin.package_name + ':' + dns_plugin.full_plugin_name + ' ' +
+			'--authenticator ' + dns_plugin.full_plugin_name + ' ' +
 			(
 				hasConfigArg
-					? '--' + dns_plugin.package_name + ':' + dns_plugin.full_plugin_name + '-config "' + credentialsLocation + '"'
+					? '--' + dns_plugin.full_plugin_name + '-config "' + credentialsLocation + '"'
 					: ''
 			) +
 			(
