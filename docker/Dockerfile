@@ -49,7 +49,7 @@ RUN chmod 644 /etc/logrotate.d/nginx-proxy-manager
 # fix for pip installs
 # https://github.com/NginxProxyManager/nginx-proxy-manager/issues/1769
 RUN pip uninstall --yes setuptools \
-	&& pip install "setuptools==58.0.0"
+	&& pip install "setuptools==58.0.0" "git+https://github.com/bbrfkr/certbot-dns-openstack.git"
 
 VOLUME [ "/data", "/etc/letsencrypt" ]
 ENTRYPOINT [ "/init" ]
