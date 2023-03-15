@@ -7,9 +7,11 @@ ENV S6_LOGGING=0 \
 
 RUN echo "fs.file-max = 65535" > /etc/sysctl.conf \
 	&& apt-get update \
-	&& apt-get install -y certbot jq python3-pip logrotate \
+	&& apt-get install -y jq python3-pip logrotate \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
+
+RUN pip install certbot
 
 # Task
 RUN cd /usr \
