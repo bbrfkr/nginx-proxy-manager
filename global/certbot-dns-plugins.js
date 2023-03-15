@@ -27,7 +27,7 @@ module.exports = {
 		version_requirement: '',
 		dependencies:        '',
 		credentials:         '',
-		full_plugin_name: 'certbot-dns-openstack:dns-openstack',
+		full_plugin_name: 'dns-openstack',
 	},
 	acmedns: {
 		display_name:        'ACME-DNS',
