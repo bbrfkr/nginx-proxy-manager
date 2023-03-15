@@ -8,4 +8,3 @@ compose.yaml
 docker-compose.yaml
 data
 letsencrypt
-.env
