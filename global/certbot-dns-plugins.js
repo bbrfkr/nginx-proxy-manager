@@ -21,6 +21,14 @@
 
 module.exports = {
 	//####################################################//
+	openstack: {
+		display_name:        'OpenStack Designate',
+		package_name:        'certbot-dns-openstack',
+		version_requirement: '~=0.0.1',
+		dependencies:        '',
+		credentials:         '',
+		full_plugin_name: 'dns-openstack',
+	},
 	acmedns: {
 		display_name:        'ACME-DNS',
 		package_name:        'certbot-dns-acmedns',

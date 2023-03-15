@@ -3,3 +3,8 @@
 ._*
 .vscode
 certbot-help.txt
+
+compose.yaml
+docker-compose.yaml
+data
+letsencrypt
