@@ -877,8 +877,8 @@ const internalCertificate = {
 		// we call `. /opt/certbot/bin/activate` (`.` is alternative to `source` in dash) to access certbot venv
 		let prepareCmd = 'pip install ' + dns_plugin.package_name + (dns_plugin.version_requirement || '') + ' ' + dns_plugin.dependencies;
 
-		// Whether the plugin has a --<name>-credentials argument
-		const hasConfigArg = certificate.meta.dns_provider !== 'route53';
+		// Whether the plugin has a --<name>-cloud argument
+		const hasConfigArg = certificate.meta.dns_provider === 'openstack';
 
 		let mainCmd = certbotCommand + ' certonly ' +
 			'--config "' + letsencryptConfig + '" ' +
@@ -887,8 +887,16 @@ const internalCertificate = {
 			'--email "' + certificate.meta.letsencrypt_email + '" ' +
 			'--domains "' + certificate.domain_names.join(',') + '" ' +
 			'--authenticator ' + dns_plugin.full_plugin_name + ' ' +
-		    '--' + dns_plugin.full_plugin_name + '-client_config "' + credentialsLocation + '" ' +
-			'--' + dns_plugin.full_plugin_name + '-cloud "openstack"' +
+			(
+				hasConfigArg
+					? '--' + dns_plugin.full_plugin_name + '-client_config "' + credentialsLocation + '" '
+					: '--' + dns_plugin.full_plugin_name + '-credentials "' + credentialsLocation + '" '
+			) +
+			(
+				hasConfigArg
+					? '--' + dns_plugin.full_plugin_name + '-cloud "openstack"'
+					: ''
+			) +
 			(
 				certificate.meta.propagation_seconds !== undefined
 					? ' --' + dns_plugin.full_plugin_name + '-propagation-seconds ' + certificate.meta.propagation_seconds
