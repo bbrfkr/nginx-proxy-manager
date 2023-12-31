@@ -32,7 +32,7 @@ module.exports = {
 	rfc2136: {
 		display_name:        'RFC 2136',
 		package_name:        'certbot-dns-rfc2136',
-		version_requirement: '==$(certbot --version | grep -Eo \'[0-9](\\.[0-9]+)+\')', // official plugin, use certbot version
+		version_requirement: '', // official plugin, use certbot version
 		dependencies:        '',
 		credentials:         `# Target DNS server
 dns_rfc2136_server = 192.0.2.1
